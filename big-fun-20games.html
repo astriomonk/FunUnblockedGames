@@ -1,0 +1,198 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Big Fun JS - 20 Games</title>
+<style>
+    body { margin: 0; font-family: Arial, sans-serif; background: #111; color: #fff; text-align: center; }
+    header { padding: 20px; font-size: 24px; font-weight: bold; background: #222; }
+    .menu { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; padding: 10px; }
+    .menu button { background: #333; color: #fff; padding: 15px; border: none; border-radius: 8px; font-size: 16px; cursor: pointer; }
+    .menu button:hover { background: #444; }
+    .game { display: none; padding: 10px; }
+    .active { display: block; }
+    canvas { background: #000; display: block; margin: auto; }
+    .back-btn { background: #e91e63; color: #fff; padding: 10px 20px; border: none; margin-top: 10px; font-size: 18px; border-radius: 8px; cursor: pointer; }
+</style>
+</head>
+<body>
+<header>🎮 Big Fun JS - 20 Games 🎮</header>
+<div id="menu" class="menu">
+<button onclick="showGame(0)">Snake</button>
+<button onclick="showGame(1)">Flappy Bird</button>
+<button onclick="showGame(2)">2048</button>
+<button onclick="showGame(3)">Tic Tac Toe</button>
+<button onclick="showGame(4)">Whack-a-Mole</button>
+<button onclick="showGame(5)">Rock Paper Scissors</button>
+<button onclick="showGame(6)">Memory Match</button>
+<button onclick="showGame(7)">Breakout</button>
+<button onclick="showGame(8)">Simon Says</button>
+<button onclick="showGame(9)">Doodle Jump</button>
+<button onclick="showGame(10)">Emoji Rain</button>
+<button onclick="showGame(11)">Clicker Frenzy</button>
+<button onclick="showGame(12)">Particle Playground</button>
+<button onclick="showGame(13)">Kaleido Draw</button>
+<button onclick="showGame(14)">Bouncy Physics</button>
+<button onclick="showGame(15)">Maze Game</button>
+<button onclick="showGame(16)">Word Scramble</button>
+<button onclick="showGame(17)">Spin the Wheel</button>
+<button onclick="showGame(18)">Number Guess</button>
+<button onclick="showGame(19)">Keyboard Piano</button>
+
+</div>
+
+<div id="game0" class="game">
+    <h2>Snake</h2>
+    <canvas id="canvas0" width="320" height="480"></canvas>
+    <button class="back-btn" onclick="backToMenu()">Back</button>
+</div>
+
+<div id="game1" class="game">
+    <h2>Flappy Bird</h2>
+    <canvas id="canvas1" width="320" height="480"></canvas>
+    <button class="back-btn" onclick="backToMenu()">Back</button>
+</div>
+
+<div id="game2" class="game">
+    <h2>2048</h2>
+    <canvas id="canvas2" width="320" height="480"></canvas>
+    <button class="back-btn" onclick="backToMenu()">Back</button>
+</div>
+
+<div id="game3" class="game">
+    <h2>Tic Tac Toe</h2>
+    <canvas id="canvas3" width="320" height="480"></canvas>
+    <button class="back-btn" onclick="backToMenu()">Back</button>
+</div>
+
+<div id="game4" class="game">
+    <h2>Whack-a-Mole</h2>
+    <canvas id="canvas4" width="320" height="480"></canvas>
+    <button class="back-btn" onclick="backToMenu()">Back</button>
+</div>
+
+<div id="game5" class="game">
+    <h2>Rock Paper Scissors</h2>
+    <canvas id="canvas5" width="320" height="480"></canvas>
+    <button class="back-btn" onclick="backToMenu()">Back</button>
+</div>
+
+<div id="game6" class="game">
+    <h2>Memory Match</h2>
+    <canvas id="canvas6" width="320" height="480"></canvas>
+    <button class="back-btn" onclick="backToMenu()">Back</button>
+</div>
+
+<div id="game7" class="game">
+    <h2>Breakout</h2>
+    <canvas id="canvas7" width="320" height="480"></canvas>
+    <button class="back-btn" onclick="backToMenu()">Back</button>
+</div>
+
+<div id="game8" class="game">
+    <h2>Simon Says</h2>
+    <canvas id="canvas8" width="320" height="480"></canvas>
+    <button class="back-btn" onclick="backToMenu()">Back</button>
+</div>
+
+<div id="game9" class="game">
+    <h2>Doodle Jump</h2>
+    <canvas id="canvas9" width="320" height="480"></canvas>
+    <button class="back-btn" onclick="backToMenu()">Back</button>
+</div>
+
+<div id="game10" class="game">
+    <h2>Emoji Rain</h2>
+    <canvas id="canvas10" width="320" height="480"></canvas>
+    <button class="back-btn" onclick="backToMenu()">Back</button>
+</div>
+
+<div id="game11" class="game">
+    <h2>Clicker Frenzy</h2>
+    <canvas id="canvas11" width="320" height="480"></canvas>
+    <button class="back-btn" onclick="backToMenu()">Back</button>
+</div>
+
+<div id="game12" class="game">
+    <h2>Particle Playground</h2>
+    <canvas id="canvas12" width="320" height="480"></canvas>
+    <button class="back-btn" onclick="backToMenu()">Back</button>
+</div>
+
+<div id="game13" class="game">
+    <h2>Kaleido Draw</h2>
+    <canvas id="canvas13" width="320" height="480"></canvas>
+    <button class="back-btn" onclick="backToMenu()">Back</button>
+</div>
+
+<div id="game14" class="game">
+    <h2>Bouncy Physics</h2>
+    <canvas id="canvas14" width="320" height="480"></canvas>
+    <button class="back-btn" onclick="backToMenu()">Back</button>
+</div>
+
+<div id="game15" class="game">
+    <h2>Maze Game</h2>
+    <canvas id="canvas15" width="320" height="480"></canvas>
+    <button class="back-btn" onclick="backToMenu()">Back</button>
+</div>
+
+<div id="game16" class="game">
+    <h2>Word Scramble</h2>
+    <canvas id="canvas16" width="320" height="480"></canvas>
+    <button class="back-btn" onclick="backToMenu()">Back</button>
+</div>
+
+<div id="game17" class="game">
+    <h2>Spin the Wheel</h2>
+    <canvas id="canvas17" width="320" height="480"></canvas>
+    <button class="back-btn" onclick="backToMenu()">Back</button>
+</div>
+
+<div id="game18" class="game">
+    <h2>Number Guess</h2>
+    <canvas id="canvas18" width="320" height="480"></canvas>
+    <button class="back-btn" onclick="backToMenu()">Back</button>
+</div>
+
+<div id="game19" class="game">
+    <h2>Keyboard Piano</h2>
+    <canvas id="canvas19" width="320" height="480"></canvas>
+    <button class="back-btn" onclick="backToMenu()">Back</button>
+</div>
+
+<script>
+function showGame(i) {
+    document.getElementById('menu').style.display = 'none';
+    for (let j = 0; j < 20; j++) {
+        document.getElementById('game' + j).classList.remove('active');
+    }
+    document.getElementById('game' + i).classList.add('active');
+}
+
+function backToMenu() {
+    for (let j = 0; j < 20; j++) {
+        document.getElementById('game' + j).classList.remove('active');
+    }
+    document.getElementById('menu').style.display = 'grid';
+}
+
+// Konami Code to unlock secret game
+let konamiCode = [38,38,40,40,37,39,37,39,66,65];
+let konamiIndex = 0;
+document.addEventListener('keydown', function(e) {
+    if (e.keyCode === konamiCode[konamiIndex]) {
+        konamiIndex++;
+        if (konamiIndex === konamiCode.length) {
+            alert('🎉 Secret Game Unlocked! Coming Soon!');
+            konamiIndex = 0;
+        }
+    } else {
+        konamiIndex = 0;
+    }
+});
+</script>
+</body>
+</html>
